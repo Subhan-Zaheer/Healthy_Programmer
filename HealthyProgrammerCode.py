@@ -87,22 +87,26 @@ def physical_time_cal(water_time, eyes_time, exercise_time):
             f.write("[" + str(getdateTime()) + "]" + "Physical Exercise done\n")
 
 
-total_mins = 8 * 60 * 60
-total_water_glass = 3.5 * 4
-total_time_reqfor_water = total_mins / total_water_glass
-water_time = 0
-eyes_time = 0
-exercise_time = 0
 
-for i in range(total_mins):
-    time.sleep(1)
 
-    if eyes_time > 0 and eyes_time % 30 == 0:
-       eyesPrac_time_cal(water_time, eyes_time, exercise_time)
-    elif water_time > 0 and water_time % 40  == 0:
-        water_timeCal(water_time, eyes_time, exercise_time)
-    elif exercise_time > 0 and exercise_time % 45 == 0:
-        physical_time_cal(water_time, eyes_time, exercise_time)
-    water_time = water_time + 1
-    eyes_time = eyes_time + 1
-    exercise_time = exercise_time + 1
+if __name__ == '__main__':
+
+    total_mins = 8 * 60 * 60
+    total_water_glass = 3.5 * 4
+    total_time_reqfor_water = total_mins / total_water_glass
+    water_time = 0
+    eyes_time = 0
+    exercise_time = 0
+
+    for i in range(total_mins):
+        time.sleep(1)
+
+        if eyes_time > 0 and eyes_time % 30 == 0:
+           eyesPrac_time_cal(water_time, eyes_time, exercise_time)
+        elif water_time > 0 and water_time % 40  == 0:
+            water_timeCal(water_time, eyes_time, exercise_time)
+        elif exercise_time > 0 and exercise_time % 45 == 0:
+            physical_time_cal(water_time, eyes_time, exercise_time)
+        water_time = water_time + 1
+        eyes_time = eyes_time + 1
+        exercise_time = exercise_time + 1
